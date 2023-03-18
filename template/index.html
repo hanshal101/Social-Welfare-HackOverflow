@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="sidebar-column">
+        <div data-collapse="medium" data-animation="default" data-duration="400" data-easing="ease" data-easing2="ease"
+          role="banner" class="navigation-bar w-nav">
+          <div class="w-container"><a href="#" class="logo-link w-nav-brand">
+            {% if user.is_authenticated %}
+            <h1 class="logo-text">Welcome, {{user.username}}</h1>
+          {% else %}
+          <h1 class="logo-text">Please Login</h1>
+          {% endif %}
+          </a>
+            <nav role="navigation" class="navigation-menu w-nav-menu">
+              <p class="main-subheading w-hidden-medium w-hidden-small w-hidden-tiny"><a href="#" class="nav-link w-nav-link">MY ACCOUNT</a></p>
+              <div class="divider w-hidden-medium w-hidden-small w-hidden-tiny"></div>
+              <a href="/template/index.html" aria-current="page" class="nav-link w-nav-link w--current" style="max-width: 940px;">Home</a>
+              <a href="/locate" class="nav-link w-nav-link" style="max-width: 940px;">Locate Issues</a>
+              <a href="/updates" class="nav-link w-nav-link" style="max-width: 940px;">Updates</a>
+              <a href="/template/chat.html" class="nav-link w-nav-link" style="max-width: 940px;">Post Anonymously</a>
+              <a href="#" class="nav-link w-nav-link" style="max-width: 940px;">Events</a>
+              {% if user.is_authenticated %}
+          <a href="/login" class="nav-link w-nav-link" style="max-width: 940px;">LogOut</a>
+          {% else %}
+          <a href="/login" class="nav-link w-nav-link" style="max-width: 940px;">LogIn</a>
+          {% endif %}
+
+              <div class="divider"></div>
+              <div class="social-link-group"><a href="#" class="social-icon-link w-inline-block"><img
+                    src="https://uploads-ssl.webflow.com/640b595b6bc2115a9464e022/640b595c6bc21117ec64e050_social-03-white.svg"
+                    width="25" alt=""></a><a href="#" class="social-icon-link w-inline-block"><img
+                    src="https://uploads-ssl.webflow.com/640b595b6bc2115a9464e022/640b595c6bc2112ecf64e0d0_social-18-white.svg"
+                    width="25" alt=""></a><a href="#" class="social-icon-link w-inline-block"><img
+                    src="https://uploads-ssl.webflow.com/640b595b6bc2115a9464e022/640b595c6bc21176e164e081_social-15-white.svg"
+                    width="25" alt=""></a><a href="#" class="social-icon-link w-inline-block"><img
+                    src="https://uploads-ssl.webflow.com/640b595b6bc2115a9464e022/640b595c6bc211476c64e0a8_social-33-white.svg"
+                    width="25" alt=""></a><a href="#" class="social-icon-link w-inline-block"><img
+                    src="https://uploads-ssl.webflow.com/640b595b6bc2115a9464e022/640b595c6bc211e9e664e0d8_social-07-white.svg"
+                    width="25" alt=""></a><a href="#" class="social-icon-link w-inline-block"><img
+                    src="https://uploads-ssl.webflow.com/640b595b6bc2115a9464e022/640b595c6bc2112ef964e0d6_social-09-white.svg"
+                    width="25" alt=""></a></div>
+            </nav>
+            <div class="menu-button w-nav-button" style="-webkit-user-select: text;" aria-label="menu" role="button"
+              tabindex="0" aria-controls="w-nav-overlay-0" aria-haspopup="menu" aria-expanded="false">
+              <div class="w-icon-nav-menu"></div>
+            </div>
+          </div>
+          <div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-0"></div>
+        </div>
+      </div>
+      <div class="content">
+        <div class="blog-list w-dyn-list">
+          <div role="list" class="w-dyn-items">
+            <div role="listitem" class="w-dyn-item">
+              <div class="post-wrapper">
+                <a href="#" class="blog-title-link w-inline-block">
+                  {% for news in news %}
+              <div class="post-wrapper"></div>
+
+              <h1 class="blog-title blog-title-link">{{news.headline}}</h1>
+            </a>
+            <div class="post-info-wrapper">
+              <div class="post-info">{{news.date}}</div>
+              <div class="post-info">|</div>
+              <a href="#" class="post-info when-link">{{news.place}}</a>
+            </div>
+            <p class="post-summary">{{news.details}}</p>
+            <a href="#" class="button-round w-button">Continue reading →</a>
+
+          {% endfor %}
+              </div>
+            </div>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+</html>

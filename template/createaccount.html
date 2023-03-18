@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/createaccount.css">
+</head>
+
+<body>
+    <div class="login-page">
+        <div class="form">
+          <div class="login">
+            <div class="login-header">
+              <h3 style="font-size: 30px;">Create Account</h3>
+            </div>
+          </div>
+
+          {% for message in message %}
+          <h5>{{message}}</h5>
+          {% endfor %}
+
+          <form class="login-form" method="post" action="createaccount">
+            {% csrf_token %}
+            <input type="text" placeholder="Username" name="username" required id="in"/>
+            <input type="email" placeholder="Email" name="email" required id="in"/>
+            <input type="password" placeholder="Password" name="password" required id="in"/>
+            <input type="password" placeholder="Confirm Password" name="password2" required id="in"/>
+            <a href="/login"><button inputmode="">Register</button></a>
+            <p class="message"><a href="/login">back to Login </a><a href="selectrole.html"> or select role</a></p>
+          </form>
+        </div>
+      </div>
+</body>
+</html>
