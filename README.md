@@ -4,5 +4,17 @@ This is a Social Welfare Website create during the HackOverflow Hackathon. We tr
 
 Some of the images of the projects are:
 
-<p>Login Page:</p>
+<p>1. Login Page:</p>
 <img src="/img/login.jpg">
+<p>2. Create Account Page:</p>
+<img src="/img/createaccount.jpg">
+<p>3. Admin Panel:</p>
+<img src="/img/admin-panel.jpg">
+<p>4. Home Page:</p>
+<img src="/img/home.jpg">
+<p>5. Updates Page:</p>
+<img src="/img/updates.jpg">
+<p>6. Anonymous Chat Page:</p>
+<img src="/img/anony-chat.jpg">
+<p>7. Locate Issues Page:</p>
+<img src="/img/locate.jpg">
